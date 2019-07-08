@@ -2,7 +2,7 @@
   <div id="app">
     <!-- AppHeader -->
     <app-header></app-header>
-     <div class="container-fluid">
+    <div class="container-fluid">
         <div class="row">
           <app-sidebar></app-sidebar>
          <!-- 主内容区域 -->
@@ -14,7 +14,7 @@
 
 <script>
 //导入AppHeader
-import AppHeader from './components/AppHeader.vue'
+import AppHeader from './components/AppHeader'
 import AppSidebar from './components/AppSidebar'
 
 export default {
@@ -27,12 +27,5 @@ export default {
 </script>
 
 <style>
-/* #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-} */
+
 </style>
