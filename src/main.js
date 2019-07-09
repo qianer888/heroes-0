@@ -1,35 +1,26 @@
+// ES6中的模块化的语法，导入模块
 import Vue from 'vue'
+
+// 根组件
 import App from './App.vue'
 
+// 提示当前处在开发模式, false 不提示
 Vue.config.productionTip = false
 
+import axios from 'axios'
+// 配置axios的基地址，调用请求方法的时候get(url)，会自动把请求方法的路径拼接到基地址后面
+axios.defaults.baseURL = 'http://localhost:3000/'
+// 让所有vue 实例都具有一个属性axios，给Vue构造函数的原型增加成员
+Vue.prototype.axios = axios
+
+
+// 导入样式
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
-//导入样式以及静态资源
 import './assets/css/index.css'
 
-
-
-// 导入vue-router
-import VueRouter from 'vue-router'
-// 注册VueRouter插件
-Vue.use(VueRouter)
-
-// 导入 HeroList 组件
-import HeroList from './views/hero/HeroList.vue'
-import WeaponList from './views/weapon/WeaponList.vue'
-import EquipList from './views/equip/EquipList.vue'
+import router from './router'
 
 // 创建路由对象
-const router = new VueRouter({
-  // 配置路由规则
-  routes: [
-    { path: '/', redirect: { name: 'hero' } },
-    { name: 'hero', path: '/hero', component: HeroList },
-    { name: 'weapon', path: '/weapon', component: WeaponList },
-    { name: 'equip', path: '/equip', component: EquipList },
-  ]
-})
-
 new Vue({
   render: createElement => createElement(App),
   // 配置router对象

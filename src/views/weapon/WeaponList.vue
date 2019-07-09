@@ -1,6 +1,6 @@
 <template>
    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h2 class="sub-header">Weapon List</h2>
+            <h2 class="sub-header">武器列表</h2>
             <a class="btn btn-success" href="add.html">Add</a>
             <div class="table-responsive">
               <table class="table table-striped">
