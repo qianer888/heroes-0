@@ -22,7 +22,7 @@
                     <td>
                       <a href="edit.html">修改</a>
                       &nbsp;&nbsp;
-                      <a href="javascript:window.confirm('Are you sure?')">删除</a>
+                      <a href="javascript:;" @click="del(item.id)">删除</a>
                     </td>
                   </tr>
                 </tbody>
@@ -43,6 +43,7 @@ export default {
     this.loadData()
   },
   methods:{
+    //列表显示
     loadData(){
       axios
       .get('http://localhost:3000/weapons')
@@ -58,6 +59,27 @@ export default {
       .catch((err) =>{
           alert('服务器错误'+err)
 
+      })
+    },
+    //删除
+    del(id){
+      if(!confirm('确定要删除?')){
+        return false;
+      }
+      axios
+      .delete(`http://localhost:3000/weapons/${id}`)
+      .then((response) => {
+        const status = response.status;
+        if(status === 200){
+          this.loadData();
+          alert('删除成功')
+        }else{
+          alert('删除失败')
+        }
+      })
+      .catch((err) => {
+        
+        alert('服务器错误--' + err);
       })
     }
   }
