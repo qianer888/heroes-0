@@ -50,7 +50,6 @@ export default {
       axios
     .get('http://localhost:3000/heroes')
     .then((response) => {
-      console.log(response)
       const {data , status} =response
       if(status === 200){
         this.list = data;
