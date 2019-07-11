@@ -48,7 +48,7 @@ export default {
     //列表显示
     loadData(){
       this.axios
-      .get('http://localhost:3000/weapons')
+      .get('weapons')
       .then((response) => {
         //解构
         const {data,status} = response;
@@ -69,7 +69,7 @@ export default {
         return false;
       }
       this.axios
-      .delete(`http://localhost:3000/weapons/${id}`)
+      .delete(`weapons/${id}`)
       .then((response) => {
         const status = response.status;
         if(status === 200){

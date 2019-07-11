@@ -37,7 +37,7 @@ export default {
     },
     methods:{
         getDataById(){
-           this.axios.get(`http://localhost:3000/weapons/${this.id}`)
+           this.axios.get(`weapons/${this.id}`)
             .then((response) => {
                 const {data,status} = response;
                 console.log(response)
@@ -52,7 +52,7 @@ export default {
             })
         },
         weaponEdit(){
-            this.axios.put(`http://localhost:3000/weapons/${this.id}`,this.formData)
+            this.axios.put(`weapons/${this.id}`,this.formData)
             .then((response) => {
                 const status = response.status
                 if(status === 200) {

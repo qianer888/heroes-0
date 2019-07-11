@@ -48,7 +48,7 @@ export default {
   methods:{
     loadData(){
       this.axios
-    .get('http://localhost:3000/heroes')
+    .get('heroes')
     .then((response) => {
       const {data , status} =response
       if(status === 200){
