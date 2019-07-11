@@ -50,6 +50,21 @@ export default {
             .catch((err) => {
                 alert('服务器错误' + err)
             })
+        },
+        weaponEdit(){
+            axios.put(`http://localhost:3000/weapons/${this.id}`,this.formData)
+            .then((response) => {
+                const status = response.status
+                if(status === 200) {
+                    this.$router.push('/weapon')
+                }else {
+                    alert('修改失败')
+                }
+                console.log(response)
+            })
+            .catch((err) => {
+                alert('服务器错误' + err);
+            })
         }
     }
 }
