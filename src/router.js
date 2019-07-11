@@ -13,7 +13,7 @@ import WeaponList from './views/weapon/WeaponList.vue'
 import EquipList from './views/equip/EquipList.vue'
 // // 导入 WeaponAdd 组件
 import WeaponAdd from './views/weapon/WeaponAdd.vue'
-// import HeroEdit from './views/hero/HeroEdit.vue'
+import WeaponEdit from './views/weapon/WeaponEdit.vue'
 
 // 创建路由对象
 const router = new VueRouter({
@@ -30,9 +30,9 @@ const router = new VueRouter({
     { name: 'weapon', path: '/weapon', component: WeaponList },
     { name: 'equip', path: '/equip', component: EquipList },
     // // 添加英雄的路由
-    { name: 'weaponadd', path: '/weapon/add', component: WeaponAdd }
+    { name: 'weaponadd', path: '/weapon/add', component: WeaponAdd },
     // // 动态路由地址 :id
-    // { name: 'heroedit', path: '/hero/edit/:id', component: HeroEdit, props: true },
+    { name: 'weaponedit', path: '/weapon/edit/:id', component: WeaponEdit,props:true }
   ]
 })
 

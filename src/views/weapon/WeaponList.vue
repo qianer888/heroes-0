@@ -21,7 +21,8 @@
                     <td>{{item.name}}</td>
                     <td>{{item.power}}</td>
                     <td>
-                      <a href="edit.html">修改</a>
+                      <!-- router-link 路由变化的时候用 -->
+                      <router-link :to="{name: 'weaponedit',params:{id:item.id}}">修改</router-link>
                       &nbsp;&nbsp;
                       <a href="javascript:;" @click="del(item.id)">删除</a>
                     </td>
