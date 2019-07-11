@@ -31,7 +31,7 @@
 
 <script>
 //导入axios
-import axios from 'axios'
+// import axios from 'axios'
 export default {
   //能与页面页面拼接的数据
   data(){
@@ -45,7 +45,7 @@ export default {
   },
   methods:{
     loadData(){
-      axios
+      this.axios
       .get('http://localhost:3000/equips')
       .then((response) => {
         const {data,status}  = response

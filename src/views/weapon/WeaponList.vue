@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 export default {
   data(){
     return {
@@ -47,7 +47,7 @@ export default {
   methods:{
     //列表显示
     loadData(){
-      axios
+      this.axios
       .get('http://localhost:3000/weapons')
       .then((response) => {
         //解构
@@ -68,7 +68,7 @@ export default {
       if(!confirm('确定要删除?')){
         return false;
       }
-      axios
+      this.axios
       .delete(`http://localhost:3000/weapons/${id}`)
       .then((response) => {
         const status = response.status;

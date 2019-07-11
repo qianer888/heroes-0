@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 //获取英雄列表
 export default {
   data(){
@@ -47,7 +47,7 @@ export default {
   },
   methods:{
     loadData(){
-      axios
+      this.axios
     .get('http://localhost:3000/heroes')
     .then((response) => {
       const {data , status} =response

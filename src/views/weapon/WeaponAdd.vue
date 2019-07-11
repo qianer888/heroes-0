@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 export default {
 data(){
     return {
@@ -30,7 +30,7 @@ data(){
 },
 methods:{
     weaponAdd(){
-        axios.post('http://localhost:3000/weapons',this.formData)
+        this.axios.post('http://localhost:3000/weapons',this.formData)
         .then((response) => {
             const status = response.status
             if(status === 201) {
